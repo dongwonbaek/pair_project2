@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h1>{{ movie.title }}</h1>
+  <h3>{{ movie.movie_name }}</h3>
+  <p>{{ movie.content }}</p>
+  <a href="{% url 'movies:update' movie.pk %}">수정</a>
+  <a href="{% url 'movies:delete' movie.pk %}">삭제</a>
+
+{% endblock body %}

@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
 {% block body %}
-  <h1>create페이지 입니다.</h1>
-  <form action="{% url 'movies:create' %}" method='POST'>
+  <h1>update 페이지입니다.</h1>
+  <form action="{% url 'movies:update' %}" method='POST'>
     {% csrf_token %}
     {% bootstrap_form movies %}
     <input type="submit">
