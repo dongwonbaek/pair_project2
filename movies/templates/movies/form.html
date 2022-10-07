@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block body %}
+  {% if request.resolver_match.url_name == 'create' %}
+    <h1 class="text-center fw-bold">리뷰 작성</h1>
+  {% else %}
+    <h1 class="text-center fw-bold">리뷰 수정</h1>
+  {% endif %}
+  <form action="" method='POST'>
+    {% csrf_token %}
+    {% bootstrap_form movies %}
+    <input class="btn btn-outline-dark w-100" type="submit">
+  </form>
+{% endblock body %}

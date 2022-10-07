@@ -1,5 +1,103 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block body %}
-      <h1 class="text-center">영화 순위</h1>
-{% endblock body %}
+{% block content %}
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'imgs/001.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'imgs/002.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'imgs/003.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'imgs/004.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'imgs/005.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <h1 class="text-center my-5 fw-bold">영화 순위</h1>
+  <section class="container my-3">
+    <div class="row g-3">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="card text_photo">
+          <a class="card-url" href="">
+            <img src="{% static 'imgs/movie1.jpg' %}" class="card-img-top" id="hvr-img" alt="..."/>
+          </a>
+          <div class="card-body movie_card">
+            <h5 class="card-title fw-bold">1. 쇼생크 탈출</h5>
+            <a href="#" class="btn btn-outline-dark">예매하기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="card text_photo">
+          <a class="card-url" href="">
+            <img src="{% static 'imgs/movie2.jpg' %}" class="card-img-top" id="hvr-img" alt="..."/>
+          </a>
+          <div class="card-body movie_card">
+            <h5 class="card-title fw-bold">2. 죽은 시인의 사회</h5>
+            <a href="#" class="btn btn-outline-dark">예매하기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="card text_photo">
+          <a class="card-url" href="">
+            <img src="{% static 'imgs/movie3.jpg' %}" class="card-img-top" id="hvr-img" alt="..."/>
+          </a>
+          <div class="card-body movie_card">
+            <h5 class="card-title fw-bold">3. 다크 나이트 라이즈</h5>
+            <a href="#" class="btn btn-outline-dark">예매하기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="card text_photo">
+          <a class="card-url" href="">
+            <img src="{% static 'imgs/movie4.jpg' %}" class="card-img-top" id="hvr-img" alt="..."/>
+          </a>
+          <div class="card-body movie_card">
+            <h5 class="card-title fw-bold">4. 그랜드 부다페스트 호텔</h5>
+            <a href="#" class="btn btn-outline-dark">예매하기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="card text_photo">
+          <a class="card-url" href="">
+            <img src="{% static 'imgs/movie5.jpg' %}" class="card-img-top" id="hvr-img" alt="..."/>
+          </a>
+          <div class="card-body movie_card">
+            <h5 class="card-title fw-bold">5. 그녀</h5>
+            <a href="#" class="btn btn-outline-dark">예매하기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="card text_photo">
+          <a class="card-url" href="">
+            <img src="{% static 'imgs/movie6.jpg' %}" class="card-img-top" id="hvr-img" alt="..."/>
+          </a>
+          <div class="card-body movie_card">
+            <h5 class="card-title fw-bold">6. 위대한 쇼맨</h5>
+            <a href="#" class="btn btn-outline-dark">예매하기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

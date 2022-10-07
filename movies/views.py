@@ -37,7 +37,7 @@ def create(request):
   context = {
     'movies': movies,
   }
-  return render(request, 'movies/create.html', context)
+  return render(request, 'movies/form.html', context)
 
 def update(request, pk):
   movie = Movie.objects.get(pk=pk)
@@ -52,7 +52,7 @@ def update(request, pk):
     'movie': movie,
     'movies': movies,
   }
-  return render(request, 'movies/update.html', context)
+  return render(request, 'movies/form.html', context)
 
 def delete(request, pk):
   movie = Movie.objects.get(pk=pk)

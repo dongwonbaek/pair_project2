@@ -6,19 +6,33 @@
   <h3>{{ movie.movie_name }}</h3>
   <hr>
   <p>{{ movie.content }}</p>
-  <!-- <a href="{% url 'movies:update' movie.pk %}">수정</a> -->
   <div class="float-end">
     <div class="d-flex align-items-end">
       <form action="{% url 'movies:update' movie.pk %}">
         <button type="submit" class="btn btn-outline-dark mx-2 fw-bold">수정</button>
       </form>
-      <form action="{% url 'movies:delete' movie.pk %}" method="POST">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-outline-dark mx-2 fw-bold">삭제</button>
-      </form>
+      <button type="button" class="btn btn-outline-dark mx-2 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        삭제
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h4>정말 삭제하시겠습니까?</h4>
+              <div class='float-end'>
+                <div class='d-flex'>
+                  <form action="{% url 'movies:delete' movie.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger mx-2 fw-bold">삭제</button>
+                  </form>
+                  <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">닫기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  
 
 {% endblock body %}
