@@ -8,7 +8,7 @@ def main(request):
   return render(request, 'movies/main.html')
 
 def index(request):
-  movie = Movie.objects.all()
+  movie = Movie.objects.order_by('-created_at')
   context = {
     'movies':movie,
   }
@@ -17,6 +17,10 @@ def index(request):
 
 def detail(request, pk):
   movie = Movie.objects.get(pk=pk)
+  cnt = movie.view_count
+  cnt += 1
+  movie.view_count = cnt
+  movie.save()
   context={
     'movie':movie,
   }
@@ -49,3 +53,11 @@ def update(request, pk):
     'movies': movies,
   }
   return render(request, 'movies/update.html', context)
+
+def delete(request, pk):
+  movie = Movie.objects.get(pk=pk)
+  if request.method == 'POST':
+    movie.delete()
+    return redirect('movies:index')
+  else:
+    return redirect('movies:detail', movie.pk)
