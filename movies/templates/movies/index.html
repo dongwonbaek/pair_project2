@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
 
 {% block body %}
-  <h1>index 페이지 입니다.</h1>
-  {% for movie in movies %}
+  <h1 class="text-center mb-5">Movie Reviews</h1>
+  
+  <ol class="list-group list-group-numbered">
+    {% for movie in movies %}
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{ movie.movie_name }}</div>
+        <a style="font-size:30px; color:black; text-decoration: none;" href="{% url 'movies:detail' movie.pk %}">{{ movie.title }}</a>
+        <p class="mt-2 mb-1">{{ movie.created_at }} | {{ movie.updated_at }}</p>
+      </div>
+      <span class="badge bg-primary rounded-pill mx-1">조회수 {{ movie.view_count }} </span>
+      <span class="badge bg-danger rounded-pill mx-1">평점 {{ movie.grade }} </span>
+    </li>
+    {% endfor %}
+  </ol>
+    <!-- {% for movie in movies %}
     <p>
       <a href="{% url 'movies:detail' movie.pk %}">{{ movie.title }}</a>
       {{ movie.movie_name }}
     </p>
-  {% endfor %}
+    {% endfor %} -->
 {% endblock body %}
