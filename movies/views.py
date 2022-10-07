@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-
 from movies.forms import MovieForm
 from .models import Movie
 
